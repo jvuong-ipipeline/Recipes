@@ -1,0 +1,30 @@
+﻿@model List<RecipesSPA.Models.Recipe>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.TextBox("searchTerm", null, new { id = "txtSearch" })
+    <input type="submit" value="Search" />
+
+}
+
+
+@if (Model != null)
+{
+
+    foreach (var item in Model)
+    {
+        <p>Id: @Html.DisplayFor(modelItem => item.Title)</p>
+        <img src="@Html.DisplayFor(modelItem => item.Image)">
+
+        <br />
+
+    }
+
+}
+
