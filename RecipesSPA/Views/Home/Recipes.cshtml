@@ -1,12 +1,13 @@
 ﻿@model List<RecipesSPA.Models.Recipe>
 
 @{
-    ViewBag.Title = "Search";
+    ViewBag.Title = "Recipes";
 }
 
-<h2>Search</h2>
+<h2>Popular Recipes</h2>
 
-@using (Html.BeginForm())
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Post))
 {
     @Html.TextBox("searchTerm", null, new { id = "txtSearch" })
     <input type="submit" value="Search" />
@@ -24,11 +25,9 @@
 
         }
 
-        @Html.ActionLink("Load next 25 items", "SearchNext", "Home");
+        @Html.ActionLink("Load next 25 items", "Recipes", "Home");
 
     }
 
 }
-
-
 
